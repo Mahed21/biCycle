@@ -10,6 +10,14 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import Review from './Review/Review';
+import DashBoard from './DashBoard/DashBoard';
+import Pay from './Pages/Pay/Pay';
+import MyOrder from './Pages/MyOrder/MyOrder';
+import ManageProduct from './Pages/ManageProduct/ManageProduct';
+import ClientOrder from './Pages/ClientOrder/ClientOrder';
+import MakeAdmin from './Pages/MakeAdmin/MakeAdmin';
+import LoginUser from './Pages/LoginUser/LoginUser';
 
 function App() {
   return (
@@ -41,6 +49,42 @@ function App() {
           <Register></Register>
 
         </Route>
+
+        <Route path="/review">
+        <Review></Review>
+        </Route>
+
+        <PrivateRoute path="/dashboard">
+        <DashBoard></DashBoard>
+        </PrivateRoute>
+
+        <Route path="/pay">
+        <Pay></Pay>
+        </Route>
+
+        <Route path="/myorder">
+        <MyOrder></MyOrder>
+        </Route>
+
+        <Route path="/manage">
+        <ManageProduct></ManageProduct>
+        </Route>
+
+        <Route path="/pay">
+        <Pay></Pay>
+        </Route>
+        <Route path="client">
+          <ClientOrder></ClientOrder>
+        </Route>
+
+        <Route path="/admin">
+          <MakeAdmin></MakeAdmin>
+        </Route>
+
+        <Route path="/loginuser">
+          <LoginUser></LoginUser>
+        </Route>
+        
       </Switch>
       <Footer></Footer>
       </BrowserRouter>

@@ -6,7 +6,7 @@ import './Header.css'
 
 const Header = () => {
   const {user,logOut}=UseAuth();
-  console.log(user);
+  
     return (
     <div>
      <nav className="navbar navbar-expand-lg nav-back">
@@ -25,12 +25,14 @@ const Header = () => {
                 <NavLink to="/explore" className="ankor ms-3 Bold text"><i class="fas fa-taxi"></i>Explorer</NavLink>
                  </li>
                  <li className="nav-item">
-               <span className=" ms-3 ankor">{user.displayName}</span>
-                { user.email?<button className="ms-3" onClick={logOut}>Sign out</button>:
-                <NavLink className="ankor ms-3" to="/login">Login</NavLink>
-
+               
+                { user.email?<button className="ms-3 log-out"  onClick={logOut} > <i class="fas fa-sign-out-alt"></i> Sign out</button> :
+                <NavLink className="ankor ms-3" to="/login" >Login</NavLink>
                 }
-        </li>
+                  { user.email?<NavLink className="ankor ms-3" to="/dashboard"><i
+                    className="fas fa-user-secret me-2"></i> DashBoard</NavLink> :''
+                  }
+             </li>
                
             </ul>
          </div>

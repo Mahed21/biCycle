@@ -2,13 +2,21 @@ import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 import './Home.css';
 
+import AllRating from '../../AllRating/AllRating';
 const Home = () => {
     const [item,setItem]=useState([]);
+    const [rating,setRating]=useState([]);
     useEffect(()=>
     {
         fetch('http://localhost:5000/products')
         .then(res=>res.json())
         .then(data=>setItem(data));
+    },[])
+    useEffect(()=>
+    {
+        fetch('http://localhost:5000/rivew')
+        .then(res=>res.json())
+        .then(data=>setRating(data));
     },[])
     return (
         <div>
@@ -37,6 +45,16 @@ const Home = () => {
                     }
 
                 </div>
+            </div>
+
+            {/* rating */}
+            <div className="container mt-5">
+            <h3 className="allrating">users Rating</h3>
+            <div className="row row-cols-lg-3 row-cols-1">
+                {
+                  rating.map(ratings=><AllRating ratings={ratings}></AllRating>)
+                }
+            </div>
             </div>
         
         </div>

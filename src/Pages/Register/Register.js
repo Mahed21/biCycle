@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import UseAuth from '../../Context/UseAuth';
+import { useHistory } from 'react-router-dom';
 import './Register.css'
 
 const Register = () => {
     const {signInEmail, error}=UseAuth();
     const [email,setEmail]=useState({});
     const [pass,setPass]=useState({});
+    const history=useHistory();
   
     const handleRegistration=(e)=>
    {
@@ -21,6 +23,7 @@ const Register = () => {
    {
        setPass(e.target.value)
    }
+
     return (
         <div>
               <h3 className="text-center mt-5 reg-form">Registration Form</h3>
@@ -45,6 +48,7 @@ const Register = () => {
                     <label for="inputPassword4" className="form-label">Password</label>
                     <input onBlur={HandlePassword} type="password" className="form-control" id="inputPassword4"/>
                 </div>
+                
                 <div>{error}</div>
                 
                   <div className="col-12  mb-4">
