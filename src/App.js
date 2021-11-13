@@ -17,11 +17,12 @@ import MyOrder from './Pages/MyOrder/MyOrder';
 
 import ClientOrder from './Pages/ClientOrder/ClientOrder';
 import MakeAdmin from './Pages/MakeAdmin/MakeAdmin';
-import LoginUser from './Pages/LoginUser/LoginUser';
+
 import ManageOrder from './Pages/Admin/ManageOrder/ManageOrder';
 import AddProducts from './Pages/Admin/AddProduct/AddProducts';
 import DisplayClientOrder from './Pages/Admin/DisplayClientOrder/DisplayClientOrder';
 import ManageProduct from './Pages/Admin/ManageProduct/ManageProduct';
+import Not from './Pages/Not/Not';
 
 function App() {
   return (
@@ -83,9 +84,6 @@ function App() {
           <MakeAdmin></MakeAdmin>
         </Route>
 
-        <Route path="/loginuser">
-          <LoginUser></LoginUser>
-        </Route>
         <Route path="/manageorder">
           <ManageOrder></ManageOrder>
         </Route>
@@ -101,6 +99,11 @@ function App() {
         <Route path="/displayclient">
           <DisplayClientOrder></DisplayClientOrder>
         </Route>
+
+        <rout path="*">
+          <Not></Not>
+
+        </rout>
         
       </Switch>
       <Footer></Footer>
