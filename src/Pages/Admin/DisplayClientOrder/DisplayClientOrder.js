@@ -23,13 +23,15 @@ const DisplayClientOrder = (props) => {
         .then (data=>{
             if(data.deletedCount>0)
             {
-                alert('deleted successfully');
+                //alert('deleted successfully');
                 const remain=usersManage.filter(user=>user._id!==id)
                  setUsersManage(remain);
-                
-                
-            }
+
+                 
+             }
+            
         });
+        alert('Succesfully deleted');
  
     }
  }
