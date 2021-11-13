@@ -44,7 +44,7 @@ const Home = () => {
             <div className="container">
                 <div className="row row-cols-lg-3 row-cols-1">
                     {
-                        item.slice(0,6).map(items=><Product items={items}></Product>)
+                        item.slice(0,6).map(items=><Product items={items} key={items._id}></Product>)
                     }
 
                 </div>
@@ -55,7 +55,7 @@ const Home = () => {
             <h3 className="allrating">users Rating</h3>
             <div className="row row-cols-lg-2 row-cols-1">
                 {
-                  rating.map(ratings=><AllRating ratings={ratings}></AllRating>)
+                  rating.map(ratings=><AllRating ratings={ratings} key={rating._id}></AllRating>)
                 }
             </div>
             </div>

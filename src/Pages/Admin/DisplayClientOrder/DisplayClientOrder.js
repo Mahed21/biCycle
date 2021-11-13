@@ -11,31 +11,7 @@ const DisplayClientOrder = (props) => {
         
         .then(data=>setUsersManage(data));
     },[])
-    const handleDelete=(id)=>
-    {
-        const proceed=window.confirm('do you want to delete')
-       if(proceed){
-        const url = (`https://afternoon-woodland-81151.herokuapp.com/client/${id}`);
-        fetch(url,{
-            method:"DELETE"
-        })
-        .then(res=>res.json())
-        .then (data=>{
-            if(data.deletedCount>0)
-            {
-                //alert('deleted successfully');
-                const remain=usersManage.filter(user=>user._id!==id)
-                 setUsersManage(remain);
-
-                 
-             }
-            
-        });
-        alert('Succesfully deleted');
- 
-    }
- }
-
+    
     const updatetoActivate =(id)=>
     {
          const url = (`https://afternoon-woodland-81151.herokuapp.com/client/${id}`);
@@ -62,7 +38,7 @@ const DisplayClientOrder = (props) => {
                     <p className="card-text"><i class="fas fa-address-card"></i> {address}</p>
                     <p className="card-text"><i class="fas fa-address-card"></i> {status}</p>
                     <button className="ms-3 sign-btn" onClick={()=>updatetoActivate(_id)}>Activate</button>
-                    <button className=" ms-2 mt-3 sign-btn" onClick={()=> handleDelete(_id)}>Delete</button>
+                    <button className=" ms-2 mt-3 sign-btn" onClick={()=> props.handleDelete(_id)}>Delete</button>
                 </div>
                 </div>
               </div>

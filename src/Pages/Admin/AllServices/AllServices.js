@@ -10,29 +10,7 @@ const AllServices = (props) => {
         
         .then(data=>setdel(data));
     },[])
-    const handleDelete=(id)=>
-    {
-       const proceed=window.confirm('do you want to delete')
-       if(proceed){
-         
-        const url = (`https://afternoon-woodland-81151.herokuapp.com/products/${id}`);
-        fetch(url,{
-            method:"DELETE"
-        })
-        .then(res=>res.json())
-        .then (data=>{
-            if(data.deletedCount>0)
-            {
-                alert('deleted successfully');
-                const remain=del.filter(user=>user._id!==id)
-                 setdel(remain);
-                
-                
-            }
-        });
- 
-    }
- }
+  
     return (
         <div>
              <div className="card mb-3">
@@ -45,7 +23,7 @@ const AllServices = (props) => {
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text"><i class="fas fa-audio-description service-icon"></i> {description}</p>
                     <p className="card-text"><i class="fas fa-dollar-sign service-icon"></i> {cost}</p>
-                    <button className=" ms-2 mt-3 sign-btn" onClick={()=> handleDelete(_id)}>Delete</button>
+                    <button className=" ms-2 mt-3 sign-btn" onClick={()=> props.handleDelete(_id)}>Delete</button>
                 </div>
                 </div>
               </div>

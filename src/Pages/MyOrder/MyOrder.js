@@ -22,12 +22,36 @@ const MyOrder = () => {
         }
       
     },[user])
+    
+    const deleteHandle=(id)=>
+    {
+        const proceed=window.confirm('do you want to delete')
+       if(proceed){
+        const url = (`https://afternoon-woodland-81151.herokuapp.com/client/${id}`);
+        fetch(url,{
+            method:"DELETE"
+        })
+        .then(res=>res.json())
+        .then (data=>{
+            if(data.deletedCount>0)
+            {
+                alert('deleted successfully');
+                const remain=userOrder.filter(user=>user._id!==id)
+                 SetUserOrder(remain);
+                 
+                
+                
+            }
+        });
+ 
+    }
+ }
     return (
         <div className="container mt-2">
             
         <div className="row row-cols-lg-2">
         {
-            userOrder.map(client=><ClientOrder client={client} key={client._id}></ClientOrder>)
+            userOrder.map(client=><ClientOrder client={client} key={client._id} deleteHandle={deleteHandle}></ClientOrder>)
         }
 
         </div>

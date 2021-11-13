@@ -14,7 +14,7 @@ const Explore = () => {
 
            <div className="row row-cols-lg-3 row-cols-1">
                     {
-                        allItem.map(allItems=><Allproducts allItems={allItems}></Allproducts>)
+                        allItem.map(allItems=><Allproducts allItems={allItems} key={allItem._id}></Allproducts>)
                     }
 
                 </div>
