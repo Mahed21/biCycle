@@ -4,13 +4,15 @@ import UseAuth from '../Context/UseAuth';
 const Review = () => {
     const revRef=useRef();
     const emailRef=useRef();
+    const comRef= useRef();
     const {user}=UseAuth();
     const submitRivew=(e)=>
     {
         e.preventDefault();
         const review= revRef.current.value;
         const email=emailRef.current.value;
-        const newUser={review,email};
+        const comment=comRef.current.value;
+        const newUser={review,email,comment};
         fetch('https://afternoon-woodland-81151.herokuapp.com/rivew',{
             method:'POST',
             headers:{
@@ -38,6 +40,11 @@ const Review = () => {
                 <div className="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Review</label>
                 <input type="text" ref={revRef} className="form-control w-50" id="exampleFormControlInput1" placeholder="give any digit from 1 to 5"/>
+                </div>
+                <div className="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">comment</label>
+                <br/>
+                <textarea id="w3review" ref={comRef} name="w3review" rows="4" cols="50"/>
                 </div>
                 <div className="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>

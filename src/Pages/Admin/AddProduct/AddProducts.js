@@ -55,7 +55,7 @@ const AddProducts = () => {
                 <label for="exampleFormControlInput1" class="form-label">Cost</label>
                 <input type="text" ref={priceRef} className="form-control w-50" id="exampleFormControlInput1" placeholder=""/>
                 </div>
-              <input type="submit" value="Submit"/>
+              <input type="submit" value="Submit" className="sign-btn"/>
               </form>
               </div>
         </div>

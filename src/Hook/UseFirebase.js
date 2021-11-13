@@ -11,17 +11,28 @@ initializeAuthentication();
         const provider = new GoogleAuthProvider();
         const [user, setUser]=useState({});
         const [error,setError]=useState('')
+        const [isLoading, setIsLoading] = useState(true);
         const [admin, setAdmin] = useState(false);
         // for google
-         const googleSignIn=()=>
+         const googleSignIn=(location,history)=>
          {
-             return signInWithPopup(auth, provider)
-         }
+            saveUser(user.email , 'PUT');
+            setIsLoading(true);
+            signInWithPopup(auth,provider)
+                .then((result) => {
+                    const user = result.user;
+                    saveUser(user.email , 'PUT');
+                    setError('');
+                    const destination = location?.state?.from || '/';
+                    history.replace(destination);
+                }).catch((error) => {
+                    setError(error.message);
+                 })
+        }
         //for email pass
-        const signInEmail=(email,pass)=>
+        const signInEmail=(email,pass,history)=>
         {
-            
-            
+            setIsLoading(true);
             saveUser(email, 'POST');
             if(pass.length<6){
                 setError('password Should be 6 character long')
@@ -34,6 +45,7 @@ initializeAuthentication();
               
                 //console.log(result.user)
                 setUser(result.user);
+                history.replace('/');
                 
             })
             .catch((error) => {
@@ -42,15 +54,20 @@ initializeAuthentication();
                 setError(errorMessage);
                 // ..
               });
+             
 
 
         }
-        const loginUser = (email, pass) => {
+        const loginUser = (email, pass,location,history) => {
+            setIsLoading(true);
            
             signInWithEmailAndPassword(auth, email, pass)
                 .then((result) => {
                     const user = result.user;
-                    saveUser(user.email , 'PUT');
+                    const destination = location?.state?.from || '/';
+                    history.replace(destination);
+                    setError('');
+                    
                     
                 })
                 .catch((error) => {
@@ -72,6 +89,7 @@ initializeAuthentication();
         //logout
         const logOut=()=>
         {
+            setIsLoading(true);
             signOut(auth)
             .then(() => {
                 setUser({});
@@ -89,7 +107,10 @@ initializeAuthentication();
             
                 setUser(user);
             } 
+            setIsLoading(false);
+
           });
+
       },[])
 
 
@@ -114,7 +135,8 @@ initializeAuthentication();
             user,
             error,
             loginUser,
-            admin
+            admin,
+            isLoading
             
            
             

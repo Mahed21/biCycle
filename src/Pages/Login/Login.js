@@ -9,16 +9,14 @@ import { useState } from 'react';
 const Login = () => {
     const [email,setEmail]=useState({});
     const [pass,setPass]=useState({});
-    const {loginUser,googleSignIn} = UseAuth();
+    const {loginUser,googleSignIn,isLoading} = UseAuth();
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.from || '/home';
+    
 
 
     const handleGoogle = (e) => {
-        googleSignIn().then(result => {
-                history.push(redirect_uri);
-            })
+        googleSignIn(location, history)
     }
     const emailLogin=(e)=>
     {
@@ -47,7 +45,7 @@ const Login = () => {
                     <div className="col-12">
                     <button className="sign-btn" onClick={(e)=>{
                         e.preventDefault();
-                        loginUser(email,pass);
+                        loginUser(email,pass,location,history);
 
                     }}>Sign in</button>
                     </div>

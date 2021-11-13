@@ -53,7 +53,7 @@ const Home = () => {
             {/* rating */}
             <div className="container mt-5">
             <h3 className="allrating">users Rating</h3>
-            <div className="row row-cols-lg-3 row-cols-1">
+            <div className="row row-cols-lg-2 row-cols-1">
                 {
                   rating.map(ratings=><AllRating ratings={ratings}></AllRating>)
                 }

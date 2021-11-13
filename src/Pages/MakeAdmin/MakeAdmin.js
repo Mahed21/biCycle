@@ -27,6 +27,7 @@ const MakeAdmin = (e) => {
             );
             
     }
+   
     return (
         <div>
            
@@ -35,7 +36,7 @@ const MakeAdmin = (e) => {
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
                 <input onBlur={handleAdmin} type="email" className="form-control w-50" id="exampleFormControlInput1" placeholder="" required/>
                 </div>
-              <input type="submit" value="Make Admin" className="sign-btn"/>
+              <input type="submit" value="Make Admin" className="sign-btn" />
             </form>
 
         </div>

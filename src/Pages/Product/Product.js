@@ -19,7 +19,7 @@ const Product = (props) => {
                     <p className="card-text"><i class="fas fa-dollar-sign service-icon"></i> {cost}</p>
                     <Link to={`/purchase/${_id}`}>
 
-                    <button className="btn">Place Order</button>
+                    <button className="sign-btn">Place Order</button>
                     </Link>
                 </div>
                 </div>

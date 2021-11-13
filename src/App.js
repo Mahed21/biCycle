@@ -23,6 +23,7 @@ import AddProducts from './Pages/Admin/AddProduct/AddProducts';
 import DisplayClientOrder from './Pages/Admin/DisplayClientOrder/DisplayClientOrder';
 import ManageProduct from './Pages/Admin/ManageProduct/ManageProduct';
 import Not from './Pages/Not/Not';
+import AdminRoute from './Pages/AdminRoute/AdminRoute';
 
 function App() {
   return (
@@ -80,9 +81,9 @@ function App() {
           <ClientOrder></ClientOrder>
         </Route>
 
-        <Route path="/admin">
+        <AdminRoute path="/admin">
           <MakeAdmin></MakeAdmin>
-        </Route>
+        </AdminRoute>
 
         <Route path="/manageorder">
           <ManageOrder></ManageOrder>
