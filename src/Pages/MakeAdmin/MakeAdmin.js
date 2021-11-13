@@ -9,19 +9,23 @@ const MakeAdmin = (e) => {
     }
     const handleSubmit=(e)=>
     {
-        // e.preventDefault();
-        // const user={email};
-        // fetch('http://localhost:5000/users/admin',{
-        //     method:'PUT',
-        //     headers:{
-        //         'content-type':'application/json'
-        //     },
-        //     body:JSON.stringify(user)
+        e.preventDefault();
+        const user={email};
+        fetch('https://afternoon-woodland-81151.herokuapp.com/users/admin',{
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(user)
 
-        // })
-        // .then(res=>res.json())
-        // .then(data=>
-        //     {console.log(data)});
+        })
+        .then(res=>res.json())
+        .then(data=>
+            {
+                
+            }
+            );
+            
     }
     return (
         <div>

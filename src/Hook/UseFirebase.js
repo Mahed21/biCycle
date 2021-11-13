@@ -11,6 +11,7 @@ initializeAuthentication();
         const provider = new GoogleAuthProvider();
         const [user, setUser]=useState({});
         const [error,setError]=useState('')
+        const [admin, setAdmin] = useState(false);
         // for google
          const googleSignIn=()=>
          {
@@ -20,7 +21,8 @@ initializeAuthentication();
         const signInEmail=(email,pass)=>
         {
             
-            //console.log(email,pass);
+            
+            saveUser(email, 'POST');
             if(pass.length<6){
                 setError('password Should be 6 character long')
                 return ;
@@ -44,10 +46,11 @@ initializeAuthentication();
 
         }
         const loginUser = (email, pass) => {
-           console.log(email,pass)
+           
             signInWithEmailAndPassword(auth, email, pass)
-                .then((userCredential) => {
-                    
+                .then((result) => {
+                    const user = result.user;
+                    saveUser(user.email , 'PUT');
                     
                 })
                 .catch((error) => {
@@ -58,6 +61,12 @@ initializeAuthentication();
                 
                 
         }
+        useEffect(() => {
+            fetch(`https://afternoon-woodland-81151.herokuapp.com/users/${user.email}`)
+                .then(res => res.json())
+                .then(data => setAdmin(data.admin))
+        }, [user.email])
+    
     
 
         //logout
@@ -84,13 +93,28 @@ initializeAuthentication();
       },[])
 
 
+      const saveUser=(email,method)=>
+      {
+        const user = { email };
+        fetch('https://afternoon-woodland-81151.herokuapp.com/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+      }
+
+
         return{
             logOut,
             googleSignIn,
             signInEmail,
             user,
             error,
-            loginUser
+            loginUser,
+            admin
             
            
             

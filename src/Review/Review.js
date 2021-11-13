@@ -11,7 +11,7 @@ const Review = () => {
         const review= revRef.current.value;
         const email=emailRef.current.value;
         const newUser={review,email};
-        fetch('http://localhost:5000/rivew',{
+        fetch('https://afternoon-woodland-81151.herokuapp.com/rivew',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

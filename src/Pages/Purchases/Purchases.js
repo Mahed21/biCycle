@@ -18,7 +18,7 @@ const Purchases = (e) => {
     
     useEffect(()=>
     {
-        fetch(`http://localhost:5000/products/${Id}`)
+        fetch(`https://afternoon-woodland-81151.herokuapp.com/products/${Id}`)
         .then(res=>res.json())
         .then(data=>setSingleData(data))
     },[])
@@ -34,7 +34,7 @@ const Purchases = (e) => {
         const phone=phoneRef.current.value;
         const status=statusRef.current.value;
         const newUser={name,email,address,phone,status};
-        fetch('http://localhost:5000/client',{
+        fetch('https://afternoon-woodland-81151.herokuapp.com/client',{
         method:'POST',
         headers:{
             'content-type':'application/json'

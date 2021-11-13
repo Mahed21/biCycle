@@ -14,10 +14,14 @@ import Review from './Review/Review';
 import DashBoard from './DashBoard/DashBoard';
 import Pay from './Pages/Pay/Pay';
 import MyOrder from './Pages/MyOrder/MyOrder';
-import ManageProduct from './Pages/ManageProduct/ManageProduct';
+
 import ClientOrder from './Pages/ClientOrder/ClientOrder';
 import MakeAdmin from './Pages/MakeAdmin/MakeAdmin';
 import LoginUser from './Pages/LoginUser/LoginUser';
+import ManageOrder from './Pages/Admin/ManageOrder/ManageOrder';
+import AddProducts from './Pages/Admin/AddProduct/AddProducts';
+import DisplayClientOrder from './Pages/Admin/DisplayClientOrder/DisplayClientOrder';
+import ManageProduct from './Pages/Admin/ManageProduct/ManageProduct';
 
 function App() {
   return (
@@ -66,9 +70,7 @@ function App() {
         <MyOrder></MyOrder>
         </Route>
 
-        <Route path="/manage">
-        <ManageProduct></ManageProduct>
-        </Route>
+        
 
         <Route path="/pay">
         <Pay></Pay>
@@ -83,6 +85,21 @@ function App() {
 
         <Route path="/loginuser">
           <LoginUser></LoginUser>
+        </Route>
+        <Route path="/manageorder">
+          <ManageOrder></ManageOrder>
+        </Route>
+
+        <Route path="/manageproduct">
+          <ManageProduct></ManageProduct>
+        </Route>
+
+        <Route path="/addproduct">
+          <AddProducts></AddProducts>
+        </Route>
+
+        <Route path="/displayclient">
+          <DisplayClientOrder></DisplayClientOrder>
         </Route>
         
       </Switch>

@@ -8,13 +8,13 @@ const Home = () => {
     const [rating,setRating]=useState([]);
     useEffect(()=>
     {
-        fetch('http://localhost:5000/products')
+        fetch('https://afternoon-woodland-81151.herokuapp.com/products')
         .then(res=>res.json())
         .then(data=>setItem(data));
     },[])
     useEffect(()=>
     {
-        fetch('http://localhost:5000/rivew')
+        fetch('https://afternoon-woodland-81151.herokuapp.com/rivew')
         .then(res=>res.json())
         .then(data=>setRating(data));
     },[])

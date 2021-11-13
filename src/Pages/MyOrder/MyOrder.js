@@ -16,7 +16,7 @@ const MyOrder = () => {
         
          if(user.email)
         {
-            fetch(`http://localhost:5000/client/${user.email}`)
+            fetch(`https://afternoon-woodland-81151.herokuapp.com/client/${user.email}`)
             .then(res=>res.json())
             .then(data=>SetUserOrder(data));
         }
