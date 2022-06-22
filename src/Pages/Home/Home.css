@@ -1,24 +1,22 @@
-.banner
-{
-    background-image: url(https://as2.ftcdn.net/v2/jpg/04/58/02/69/1000_F_458026918_XoxbpbGjGNohiHr44L1Ev0vJH8oEh2eX.jpg);
-    color:white;
-    background-size: cover;
-    background-position: center;
-    color:white;
-    min-height: 100vh;
-   
+.banner {
+  background-image: url("../../image/cyclist.png");
+  color: white;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 100vh;
+}
+.banner-text {
+  color: white;
+  font-weight: bolder;
+  font-weight: 200;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.btn {
+  background-color: black;
+  color: white;
+}
 
-}
-.banner-text
-{
-    color:black;
-}
-.btn{
-    background-color: Ivory;
-    color:black;
-
-}
-.additional h4
-{
-    color:MediumTurquoise;
+.additional h4 {
+  color: MediumTurquoise;
 }
