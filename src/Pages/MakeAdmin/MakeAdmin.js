@@ -1,47 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "./MakeAdmin.css";
 
 const MakeAdmin = (e) => {
-    const [email,setEmail]=useState('');
-  
-    const handleAdmin=(e)=>
-    {
-        setEmail(e.target.value);
-    }
-    const handleSubmit=(e)=>
-    {
-        e.preventDefault();
-        const user={email};
-        fetch('https://afternoon-woodland-81151.herokuapp.com/users/admin',{
-            method:'PUT',
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify(user)
+  const [email, setEmail] = useState("");
 
-        })
-        .then(res=>res.json())
-        .then(data=>
-            {
-                
-            }
-            );
-            
-    }
-   
-    return (
-        <div>
-           
-            <form className="mt-3 mb-3 mx-auto w-50" onSubmit={handleSubmit} id="click">
-                <div className="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input onBlur={handleAdmin} type="email" className="form-control w-50" id="exampleFormControlInput1" placeholder="" required/>
-                </div>
-              <input type="submit" value="Make Admin" className="sign-btn" />
-            </form>
+  const handleAdmin = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const user = { email };
+    fetch("https://afternoon-woodland-81151.herokuapp.com/users/admin", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {});
+  };
 
-        </div>
-       
-    );
+  return (
+    <div className="makeadmin  d-flex justify-content-center align-items-center ">
+      <div>
+        <h4 className="mb-3">Make Admin</h4>
+        <form className="" onSubmit={handleSubmit} id="click">
+          <div className="mb-3">
+            <input
+              onBlur={handleAdmin}
+              type="email"
+              className="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Give new admin email"
+              required
+            />
+          </div>
+          <input type="submit" value="Make Admin" className="btn" />
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default MakeAdmin;

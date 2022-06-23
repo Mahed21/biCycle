@@ -1,10 +1,14 @@
-.login h3
-{
-   color:MediumTurquoise;
+.login-form {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.sign-btn
-{
-    background-color: MediumTurquoise;
-    color:white;
-    border:none;
+.form-control {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid black;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-bottom: 3px solid black;
 }

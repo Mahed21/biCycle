@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Product from "../Product/Product";
 import "./Home.css";
-import img from "../../img1.jpg";
-import img1 from "../../img2.jpg";
-import img2 from "../../img-3.jpg";
+import img from "../../image/img1.jpg";
+import img1 from "../../image/img2.jpg";
+import img2 from "../../image/img-3.jpg";
 
 import AllRating from "../../AllRating/AllRating";
 const Home = () => {
@@ -47,7 +47,7 @@ const Home = () => {
 
       {/* rating */}
       <div className="container mt-5">
-        <h3 className="allrating">users Rating</h3>
+        <h3 className="text-center mb-5">Users Review</h3>
         <div className="row row-cols-lg-2 row-cols-1">
           {rating.map((ratings) => (
             <AllRating ratings={ratings} key={rating._id}></AllRating>

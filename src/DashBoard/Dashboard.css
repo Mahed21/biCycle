@@ -1,8 +1,7 @@
-.ankor
-{
-    text-decoration: none;
+.ankor {
+  text-decoration: none;
+  color: black !important;
 }
-.card-dash
-{
-    box-shadow: 5px 10px #888888;
+.card-dash {
+  box-shadow: 5px 10px #888888;
 }
