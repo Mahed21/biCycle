@@ -7,7 +7,7 @@ const DashBoard = () => {
   const { user, logOut, admin } = UseAuth();
   console.log(admin);
   return (
-    <div className="row card-dash mt-5">
+    <div className="row card-dash mt-5 ms-3">
       <div className="col-lg-3 col-md-3">
         <div className="d-flex" id="wrapper">
           {/* <!-- Sidebar --> */}

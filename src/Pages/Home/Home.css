@@ -20,3 +20,33 @@
 .additional h4 {
   color: MediumTurquoise;
 }
+.about {
+  background-color: #f0f1f7;
+}
+.about h5 {
+  color: rgb(90, 87, 87);
+  font-style: oblique;
+}
+.about h4 {
+  color: #3e7c83;
+}
+.about h2 {
+  font-style: oblique;
+}
+.box {
+  background-color: #222222;
+  color: white;
+}
+
+.box-parent {
+  position: relative;
+}
+.box {
+  position: absolute;
+  top: -130px;
+}
+@media (max-width: 940px) {
+  .box {
+    display: none;
+  }
+}

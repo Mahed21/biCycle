@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Product from "../Product/Product";
 import "./Home.css";
-import img from "../../image/img1.jpg";
-import img1 from "../../image/img2.jpg";
-import img2 from "../../image/img-3.jpg";
+import banner from "../../image/banner.png";
 
 import AllRating from "../../AllRating/AllRating";
 const Home = () => {
@@ -56,68 +54,45 @@ const Home = () => {
       </div>
 
       {/* additional part */}
-      <div className="container mt-3 additional mb-5">
-        <h3 className="text-center heading pt-3 pb-3">
-          Why choose MAC BiCycle blast
-        </h3>
-        <div className="row">
-          <div className="col-lg-5 col-12">
-            <h4>Best Brand</h4>
-            <p>We always supply best bycycle brand</p>
-            <hr />
-
-            <h4>Lower Price</h4>
-            <p>
-              Price is not as musch as it is most cheapest blast than any oter
-              other company
-            </p>
-            <hr />
-            <h4>Services</h4>
-            <p>It will serve with los lasting we offer 3 yeras geranti </p>
-            <h4>Safety</h4>
-            <p>we have a good history since two years for safety </p>
+      <div className="about pt-5 pb-5">
+        <div className="container  pt-5 pb-5">
+          <div className="row row-cols-lg-2">
+            <div>
+              <h4>About Us</h4>
+              <h2>Welcome to RoadPedal</h2>
+              <h5 className="mt-4">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s,
+              </h5>
+              <br />
+              <h5>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s,
+              </h5>
+              <button className="mt-3 pt-1 pb-1 ps-5 pe-5">Read More</button>
+            </div>
+            <img src={banner} alt="" />
           </div>
-          <div className="col-lg-7 col-12">
-            <div
-              id="carouselExampleControls"
-              className="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <img src={img} className="d-block w-100" alt="..." />
-                </div>
-                <div className="carousel-item">
-                  <img src={img1} className="d-block w-100" alt="..." />
-                </div>
-                <div className="carousel-item">
-                  <img src={img2} className="d-block w-100" alt="..." />
-                </div>
-              </div>
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev"
-              >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="next"
-              >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Next</span>
-              </button>
+        </div>
+      </div>
+
+      <div className="container box-parent mb-4">
+        <div className="row row-cols-lg-3">
+          <div>
+            <div className="box ps-5 pe-5 pt-3 pb-3">
+              <h4>Special Item</h4>
+            </div>
+          </div>
+          <div>
+            <div className="box ps-5 pe-5 pt-3 pb-3">
+              <h4>Just Arrived </h4>
+            </div>
+          </div>
+          <div>
+            <div className="box ps-5 pe-5 pt-3 pb-3">
+              <h4>Top Selling </h4>
             </div>
           </div>
         </div>
