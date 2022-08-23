@@ -1,13 +1,16 @@
 .banner {
-  background-image: url("../../image/cyclist.png");
+  background-image: url("../../image/banner_new.png");
   color: white;
-  background-size: cover;
-  background-position: center;
+
   color: white;
   min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .banner-text {
-  color: white;
+  background-color: white;
+  color: black;
   font-weight: bolder;
   font-weight: 200;
   font-family: Arial, Helvetica, sans-serif;
@@ -45,6 +48,7 @@
   position: absolute;
   top: -130px;
 }
+
 @media (max-width: 940px) {
   .box {
     display: none;

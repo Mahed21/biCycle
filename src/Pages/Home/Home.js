@@ -20,8 +20,8 @@ const Home = () => {
   return (
     <div>
       {/* banner */}
-      <div className="banner mb-5 d-flex align-items-center">
-        <div className="banner-text  pt-5">
+      <div className="banner mb-5 d-flex align-items-end pb-3 justify-content-center ps-5 pe-5">
+        <div className="banner-text  pt-5 pb-5">
           <h3 className="text-center">Most Popular bicycle shop</h3>
           <h5 className="text-center mt-3">
             “Life is like riding a bicycle. To keep your balance you must keep
@@ -44,6 +44,7 @@ const Home = () => {
       </div>
 
       {/* rating */}
+
       <div className="container mt-5">
         <h3 className="text-center mb-5">Users Review</h3>
         <div className="row row-cols-lg-2 row-cols-1">

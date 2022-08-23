@@ -16,6 +16,7 @@ const Product = (props) => {
 
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
+
           <p className="card-text">
             <i class="fas fa-audio-description service-icon"></i> {description}
           </p>

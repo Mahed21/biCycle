@@ -15,4 +15,10 @@
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-bottom: 4px solid rgb(68, 68, 26);
+  border-left: 4px solid rgb(68, 68, 26);
+}
+.sale {
+  background-color: rgb(32, 31, 31);
+  color: white;
 }

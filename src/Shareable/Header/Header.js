@@ -8,7 +8,7 @@ const Header = () => {
   const { user, logOut } = UseAuth();
 
   return (
-    <div className="myNavbar">
+    <div className="myNavbar sticky-top ">
       <div className="container pt-2 pb-2 ">
         <nav className="navbar navbar-expand-lg nav-back">
           <div className="container-fluid">
@@ -36,7 +36,7 @@ const Header = () => {
 
                 <li className="nav-item">
                   <NavLink to="/explore" className="ankor ms-3 Bold text">
-                    <i class="fas fa-taxi"></i>Explorer
+                    <i class="fas fa-taxi me-1"></i>Explorer
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -46,16 +46,16 @@ const Header = () => {
                       to="/login"
                       onClick={logOut}
                     >
-                      <i class="fas fa-sign-out-alt"></i>Logout
+                      <i class="fas fa-sign-out-alt me-1"></i>Logout
                     </NavLink>
                   ) : (
                     <NavLink className="ankor ms-3" to="/login">
-                      <i class="fas fa-sign-out-alt"></i> Login
+                      <i class="fas fa-sign-out-alt me-1"></i> Login
                     </NavLink>
                   )}
                   {user.email ? (
                     <NavLink className="ankor ms-3" to="/dashboard">
-                      <i className="fas fa-user-secret me-2"></i> DashBoard
+                      <i className="fas fa-user-secret me-2 me-1"></i> DashBoard
                     </NavLink>
                   ) : (
                     ""

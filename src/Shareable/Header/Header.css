@@ -1,11 +1,15 @@
 .ankor {
   text-decoration: none;
   color: black;
-  font-size: 22px;
+  font-size: 20px;
 }
 .log-out {
   border: none;
 }
 .myNavbar {
+  background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.fas {
+  color: #2c3e50;
 }
